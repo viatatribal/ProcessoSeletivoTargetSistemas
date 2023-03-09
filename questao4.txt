@@ -1,0 +1,51 @@
+4 - Dois veículos (um carro e um caminhão) saem respectivamente de cidades 
+opostas pela mesma rodovia. O carro de Ribeirão Preto em direção a Franca, 
+a uma velocidade constante de 110 km/h e o caminhão de Franca em direção a 
+Ribeirão Preto a uma velocidade constante de 80 km/h. Quando eles se 
+cruzarem na rodovia, qual estará mais próximo a cidade de Ribeirão Preto?  
+IMPORTANTE:  
+a) Considerar a distância de 100km entre a cidade de Ribeirão Preto <-> Franca.  
+b) Considerar 2 pedágios como obstáculo e que o caminhão leva 5 minutos a 
+mais para passar em cada um deles e o carro possui tag de pedágio (Sem Parar)  
+c) Explique como chegou no resultado. 
+
+Resposta:
+Podemos definir a velocidade do carro e do caminhão pela seguinte função:
+x_i = x_i0 + v_i * t
+onde i pertence a {1,2} (carro e caminhão), x_i é a posição deles, x_i0 a posição inicial de cada um 
+e v_i sua velocidade.
+
+Como a distância entre as duas cidades é 100 km, então podemos dizer que a
+posição inicial do carro é 0 e a do caminhão é de 100 km.
+Então temos:
+x_1 = 0 + 110km/h * t (carro)
+x_2 = 100km - 80km/h * t (caminhão)
+
+Primeiro calculamos o tempo de viagem do caminhão sem os 2 pedágios(colocando x_2 = 0):
+0 = 100km - 80km/h * t_viagem
+t_viagem = 100km/(80km/h)
+t_viagem = 1,25h
+
+Como existem 2 pedágios e ele perde 10 minutos total (ou 0,17h) temos:
+t_real = 1,25h + 0,17h = 1,42h.
+Com isso podemos concluir que a velocidade média do caminhão foi de:
+v_2m = 100km/1,42h
+v_2m = 70,4km/h
+
+Com isso construimos uma nova equação:
+x_2 = 100km - 70,4km/h * t (caminhão)
+
+Como o tempo que os dois se encontram é o mesmo, temos:
+t = x_1 / 110km/h 
+t = (x_2 - 100km) / (-70,4km/h)
+
+Igualando e lembrando que x_1 = x_2 = x, temos:
+x / 110km/h  = (x_2 - 100km) / (-70,4km/h)
+x * (-70,4km/h) = 110km/h * (x - 100km)
+x * (-70,4km/h) = 110km/h * x - 11000(km)²/h
+x * (-70,4km/h - 110km/h) = -11000(km)²/h
+x = (-11000(km)²/h) / (-180,4km/h)
+x = 61,0km
+
+Logo, x = 61,0km é a distância até a cidade de Ribeirão Preto e ambos 
+o carro e o caminhão estão a mesma distância.
